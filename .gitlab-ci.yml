@@ -10,7 +10,7 @@ stages:
   - deploy
   
 # Job: Build - INSTALL packages and config:
-DEV build:
+DEV-Build:
   stage: build
   script:
 ##    - git log # see below
@@ -19,7 +19,7 @@ DEV build:
   tags:
     - dev-dkr
 # Job: Test - Check for DEPENDENCIES:
-DEV test:
+DEV-Test:
   stage: test
   script:
     - pwd
@@ -29,7 +29,7 @@ DEV test:
     - dev-dkr
     
 # Job: DEPLOY - Push the CODE -> REMOTE:
-DEV Deploy:
+DEV-Deploy:
   stage: deploy
   script:
     # Copy ALL Files to Remote Server
